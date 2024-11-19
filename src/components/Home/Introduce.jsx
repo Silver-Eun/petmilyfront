@@ -21,15 +21,14 @@ function Introduce({ props, calcProductPrice, addCart }) {
             url = 'discountedProductList';
         }
 
-        axios
-          .get(`175.45.192.191/rsproduct/${url}`)
-          .then((response) => {
-            setProductData(response.data);
-            //console.log(`** productData 서버연결 성공 =>`, response.data);
-          })
-          .catch((err) => {
-            console.log(`** productData 서버연결 실패 => ${err.message}`);
-          });
+        axios.get(`/rsproduct/${url}`)
+            .then((response) => {
+                setProductData(response.data);
+                //console.log(`** productData 서버연결 성공 =>`, response.data);
+            })
+            .catch((err) => {
+                console.log(`** productData 서버연결 실패 => ${err.message}`);
+            });
     }, [props]);
 
     return (
