@@ -26,7 +26,7 @@ export default function InquiryDetail() {
     let contents = inquiry.inquiry_content;
 
     function inquiryDelete() {
-        let url = '/inquiry/delete/' + id;
+        let url = 'https://175.45.192.191/inquiry/delete/' + id;
         axios.delete(
             url
         ).then(response => {
@@ -41,7 +41,7 @@ export default function InquiryDetail() {
 
     useEffect(() => {
         axios
-            .get('/inquiryDetail/' + id)
+            .get('https://175.45.192.191/inquiryDetail/' + id)
             .then((response) => {
                 setInquiry(response.data);
             })

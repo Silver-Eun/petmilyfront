@@ -57,7 +57,7 @@ export default function Profile() {
       user_password: currentPassword,
     }
     axios
-      .post(`/rsuser/checkPassword/${userId}`, setcurrentPassword)
+      .post(`https://175.45.192.191/rsuser/checkPassword/${userId}`, setcurrentPassword)
       .then((response) => {
         setShowModal(false);
         navigate("/user/Update");
@@ -75,7 +75,7 @@ export default function Profile() {
 
     const confirmDelete = window.confirm("정말 탈퇴하시겠습니까?");
     if (confirmDelete) {
-      axios.delete(`/rsuser/selfDelete/${user_id}`)
+      axios.delete(`https://175.45.192.191/rsuser/selfDelete/${user_id}`)
         .then(response => {
           alert("회원탈퇴가 완료되었습니다");
           sessionStorage.removeItem("loggedInUser"); // 세션에서 사용자 정보 삭제

@@ -42,7 +42,7 @@ export default function ReviewWrite() {
         let formData = new FormData(document.getElementById('reviewForm'));
 
         await axios.post(
-            "/review/insert",
+            "https://175.45.192.191/review/insert",
             formData,
             {
                 headers: {
@@ -62,7 +62,7 @@ export default function ReviewWrite() {
     }
 
     const getProductData = () => {
-        axios.get(`/rsproduct/productDetail/${id}`)
+        axios.get(`https://175.45.192.191/rsproduct/productDetail/${id}`)
             .then((response) => {
                 setProductData(response.data);
                 console.log(`** productDetail 서버연결 성공 =>`, response.data);

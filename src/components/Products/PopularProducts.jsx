@@ -7,7 +7,7 @@ function PopularProducts({ calcProductPrice, sortProducts, addCart }) {
     const [popularProductData, setPopularProductData] = useState([]);
 
     useEffect(() => {
-        axios.get('/rsproduct/popularProductList')
+        axios.get('https://175.45.192.191/rsproduct/popularProductList')
             .then((response) => {
                 setPopularProductData(response.data);
                 console.log(`** popularProductList 서버연결 성공 =>`, response.data);

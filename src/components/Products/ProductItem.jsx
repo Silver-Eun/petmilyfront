@@ -7,7 +7,7 @@ const ProductItem = ({ it, calcProductPrice, setCartItems }) => {
     
     // 장바구니 추가
     function cartInsertP(a) {    
-        let url="/rscart/cartInsertP/" + a;
+        let url="https://175.45.192.191/rscart/cartInsertP/" + a;
         
         axios.post(url)
             .then((response) => {

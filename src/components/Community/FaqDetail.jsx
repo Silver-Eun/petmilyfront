@@ -15,7 +15,7 @@ export default function DetailDetail() {
 
     useEffect(() => {
         axios
-            .get('/faqDetail/' + id)
+            .get('https://175.45.192.191/faqDetail/' + id)
             .then((response) => {
                 setFaq(response.data);
             })

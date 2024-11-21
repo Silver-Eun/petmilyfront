@@ -151,7 +151,7 @@ const ProductDetail = ({ calcProductPrice, addCart, addOrder, setCartItems, noth
     useEffect(() => {
         const fetchProductData = async () => {
             try {
-                const response = await axios.get(`/rsproduct/productDetail/${id}`);
+                const response = await axios.get(`https://175.45.192.191/rsproduct/productDetail/${id}`);
                 setProductDetailData(response.data);
                 console.log("** productDetail 서버연결 성공 =>", response.data);
             } catch (error) {
@@ -161,7 +161,7 @@ const ProductDetail = ({ calcProductPrice, addCart, addOrder, setCartItems, noth
 
         const fetchProductImageData = async () => {
             try {
-                const response = await axios.get(`/rsproduct/productImage/${id}`);
+                const response = await axios.get(`https://175.45.192.191/rsproduct/productImage/${id}`);
                 setProductImagesData(response.data);
                 console.log("** productImagesData 서버연결 성공 =>", response.data);
             } catch (error) {
@@ -171,7 +171,7 @@ const ProductDetail = ({ calcProductPrice, addCart, addOrder, setCartItems, noth
 
         const fetchInquiryData = async () => {
             try {
-                const response = await axios.get(`/rsproduct/inquiry/list/${id}`);
+                const response = await axios.get(`https://175.45.192.191/rsproduct/inquiry/list/${id}`);
                 setInquiry(response.data);
             } catch (error) {
                 alert(`자료가 없습니다.`);
@@ -180,7 +180,7 @@ const ProductDetail = ({ calcProductPrice, addCart, addOrder, setCartItems, noth
 
         const fetchReviewData = async () => {
             try {
-                const response = await axios.get(`/rsproduct/review/list/${id}`);
+                const response = await axios.get(`https://175.45.192.191/rsproduct/review/list/${id}`);
                 setReview(response.data);
             } catch (error) {
                 alert(`자료가 없습니다.`);

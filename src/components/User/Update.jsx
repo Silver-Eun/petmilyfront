@@ -360,7 +360,7 @@ function Update() {
             const newpassword = {
                 user_password: newPassword,
             };
-            axios.post(`/rsuser/pwupdate/${userId}`, newpassword)
+            axios.post(`https://175.45.192.191/rsuser/pwupdate/${userId}`, newpassword)
                 .then(response => {
                     alert("비밀번호가 변경되었습니다");
                     // 비밀번호 변경 성공 시 필요한 처리를 추가할 수 있습니다.
@@ -385,7 +385,7 @@ function Update() {
             addr_detail: AddrD,
         };
 
-        axios.post(`/rsuser/update/${userId}`, userData)
+        axios.post(`https://175.45.192.191/rsuser/update/${userId}`, userData)
             .then(response => {
                 const updatedUserData = {
                     ...JSON.parse(sessionStorage.getItem("loggedInUser")),

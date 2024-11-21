@@ -65,7 +65,7 @@ function Review() {
         setCurrentPage(1); // 검색 매개변수가 변경될 때 currentPage를 1로 재설정
         const fetchData = async () => {
             try {
-                const response = await axios.get('/review/list', {
+                const response = await axios.get('https://175.45.192.191/review/list', {
                     params: {
                         searchPeriod,
                         searchCriteria,

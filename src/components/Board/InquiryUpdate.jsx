@@ -23,7 +23,7 @@ export default function InquiryUpdate() {
             return;
         }
         try {
-            await axios.post(`/inquiry/updateBoard/`, {
+            await axios.post(`https://175.45.192.191/inquiry/updateBoard/`, {
                 inquiry_id: id,
                 inquiry_title: inquiry.inquiry_title,
                 product_id: selectedValue || inquiry.product_id, // 만약 selectedValue가 존재하면 그 값을 사용하고, 그렇지 않으면 inquiry.product_id 사용
@@ -39,7 +39,7 @@ export default function InquiryUpdate() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`/inquiryDetail/${id}`);
+                const response = await axios.get(`https://175.45.192.191/inquiryDetail/${id}`);
                 setInquiry(response.data);
             } catch (error) {
                 console.error('상품문의 데이터를 불러오는 중 에러:', error);
@@ -53,7 +53,7 @@ export default function InquiryUpdate() {
         const searchInput = document.getElementById('searchInput').value;
 
         try {
-            const response = await axios.get(`/product/search?name=${searchInput}`);
+            const response = await axios.get(`https://175.45.192.191/product/search?name=${searchInput}`);
             setSearchResult(response.data);
         } catch (error) {
             console.error('찾으시는 상품이 없습니다.', error);
@@ -69,7 +69,7 @@ export default function InquiryUpdate() {
         setKind(selectedKind);
 
         try {
-            const response = await axios.get(`/product/kind/${selectedKind}`);
+            const response = await axios.get(`https://175.45.192.191/product/kind/${selectedKind}`);
             const { product, kinds } = response.data;
 
             const formattedData = Object.values(kinds).map(category => ({
@@ -87,7 +87,7 @@ export default function InquiryUpdate() {
         const selectedCategory = event.target.value;
 
         try {
-            const response = await axios.get(`/product/category/${kind}/${selectedCategory}`);
+            const response = await axios.get(`https://175.45.192.191/product/category/${kind}/${selectedCategory}`);
             setSearchResult(response.data);
         } catch (error) {
             console.error('카테고리 데이터를 불러오는 중 에러:', error);

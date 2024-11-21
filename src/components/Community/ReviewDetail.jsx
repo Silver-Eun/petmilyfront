@@ -82,7 +82,7 @@ function ReviewDetail() {
 
     function getReplies() {
         setIsLoading(true);
-        let url = '/review/reply/' + id;
+        let url = 'https://175.45.192.191/review/reply/' + id;
         axios.get(url)
             .then(response => {
                 setReplies(response.data);
@@ -97,7 +97,7 @@ function ReviewDetail() {
     }
 
     function reviewDelete() {
-        let url = `/review/delete/${id}/${review.order_key}/${review.product_id}`;
+        let url = `https://175.45.192.191/review/delete/${id}/${review.order_key}/${review.product_id}`;
         axios.delete(
             url
         ).then(response => {
@@ -111,7 +111,7 @@ function ReviewDetail() {
     }
 
     const replyDelete = async (reply_id) => {
-        let url = '/review/reply/delete/' + reply_id;
+        let url = 'https://175.45.192.191/review/reply/delete/' + reply_id;
         axios.delete(
             url
         ).then(response => {
@@ -126,7 +126,7 @@ function ReviewDetail() {
 
     useEffect(() => {
         axios
-            .get('/reviewDetail/' + id)
+            .get('https://175.45.192.191/reviewDetail/' + id)
             .then((response) => {
                 setReview(response.data);
             })

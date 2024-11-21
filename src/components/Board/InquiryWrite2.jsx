@@ -22,7 +22,7 @@ export default function InquiryWrite2() {
             return;
         }
 
-        let url = "/inquiry/insert";
+        let url = 'https://175.45.192.191/inquiry/insert';
 
         await axios({
             url: url,
@@ -47,7 +47,7 @@ export default function InquiryWrite2() {
     }
 
     const getProductData = () => {
-        axios.get(`/rsproduct/productDetail/${id}`)
+        axios.get(`https://175.45.192.191/rsproduct/productDetail/${id}`)
             .then((response) => {
                 setProductData(response.data);
                 console.log(`** productDetail 서버연결 성공 =>`, response.data);
