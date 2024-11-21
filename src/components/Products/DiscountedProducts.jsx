@@ -7,7 +7,7 @@ function DiscountedProducts({ calcProductPrice, sortProducts, addCart }) {
     const [discountedProductData, setDiscountedProductData] = useState([]);
 
     useEffect(() => {
-        axios.get('/rsproduct/discountedProductList')
+        axios.get('https://175.45.192.191/rsproduct/discountedProductList')
             .then((response) => {
                 setDiscountedProductData(response.data);
                 console.log(`** discountedProductList 서버연결 성공 =>`, response.data);
