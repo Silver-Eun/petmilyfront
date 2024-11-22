@@ -19,22 +19,24 @@ function Login() {
         };
 
         axios
-          .post(url, data, {
-            headers: { "Content-Type": "application/json" },
-            withCredentials: true, // 세션 쿠키 사용을 위해 추가
-          })
-          .then((response) => {
-            const user = response.data;
-            sessionStorage.setItem("loggedInUser", JSON.stringify(user));
-            navigate("/");
-          })
-          .catch((err) => {
-            console.error(
-              `** err.response=${err.response}, err.response.status=${err.response.status}, err.message=${err.message}`
-            );
-            alert("아이디 또는 비밀번호가 다릅니다");
-          });
-    };
+            .post(url, data, {
+                headers: { "Content-Type": "application/json" },
+                withCredentials: true, // 세션 쿠키 사용을 위해 추가
+            })
+            .then((response) => {
+                const user = response.data;
+                // 서버에서 받은 사용자 정보를 sessionStorage에 저장
+                sessionStorage.setItem("loggedInUser", JSON.stringify(user));
+                navigate("/");  // 로그인 후 이동
+            })
+            .catch((err) => {
+                console.error(
+                    `** err.response=${err.response}, err.response.status=${err.response.status}, err.message=${err.message}`
+                );
+                alert("아이디 또는 비밀번호가 다릅니다");
+            });
+        };
+
     const NaverLogin = () => {
         const NAVER_CLIENT_ID = "X8MsAj1qeOGBGpWCrM5B";
         const REDIERCT_URI = "http://localhost:3000/NaverLogin";
