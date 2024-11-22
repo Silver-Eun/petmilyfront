@@ -19,7 +19,7 @@ function Login() {
         };
 
         axios
-            .post(url, data, { headers: { "Content-Type": "application/json" } })
+            .post(url, data, { headers: { "Content-Type": "application/json" } }, { withCredentials: true })
             .then((response) => {
                 const user = response.data;
                 sessionStorage.setItem("loggedInUser", JSON.stringify(user));
@@ -30,7 +30,7 @@ function Login() {
                 console.error(
                     `** err.response=${err.response}, err.response.status=${err.response.status}, err.message=${err.message}`
                 );
-                if (err.response.status == 401) {
+                if (err.response.status === 401) {
                     alert("id 또는 password 가 다릅니다");
                 } else {
                     alert("id 또는 password 가 다릅니다");

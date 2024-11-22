@@ -53,12 +53,6 @@ const ProductDetail = ({ calcProductPrice, addCart, addOrder, setCartItems, noth
         setQuantity(parseInt(event.target.value, 10));
     };
 
-    // 장바구니 추가(2차 프젝)
-    // const handleAddToCart = () => {
-    //     addCart({ ...productDetailData, product_cnt :quantity });
-    //     setQuantity(1);
-    // };
-
     // 바로 구매하기
     const handleAddToOrder = () => {
         const loggedInUser = sessionStorage.getItem("loggedInUser");
@@ -72,32 +66,22 @@ const ProductDetail = ({ calcProductPrice, addCart, addOrder, setCartItems, noth
         }
     };
 
-    // 장바구니 추가(3차 프젝)
+    // 장바구니 추가
     function cartInsert(a, b) {
-        let url = "/rscart/cartInsert/" + a + "/" + b;
+        let url = "https://175.45.192.191/rscart/cartInsert/" + a + "/" + b;
 
          const loggedInUser = sessionStorage.getItem("loggedInUser");
 
         if (loggedInUser) {
           axios
-            .post(url)
+            .post(url, { withCredentials: true })
             .then((response) => {
-                // setNothing(nothing + 1);
-                // axios
-                //   .get("/rscart/cartList")
-                //   .then((response) => {
-                //     setCartItems(response.data);
-                //   })
-                //   .catch((err) => {
-                //     alert(`** checkdata 서버연결 실패 => ${err.message}`);
-                //   });
                 alert("장바구니에 상품이 추가되었습니다");
                 navigate("/user/cart");
-                // window.location.reload();
             })
             .catch((err) => {
               if (err.response.status) alert(err.response.data);
-              else alert("~~ 시스템 오류, 잠시후 다시하세요 => " + err.message);
+              else alert("시스템 오류, 잠시 후 다시하세요 => " + err.message);
             });
         } else {
           alert("로그인 해주세요");
