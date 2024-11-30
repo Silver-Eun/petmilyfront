@@ -58,7 +58,7 @@ export default function OrderList() {
 
   useEffect(() => {
     axios
-      .get("https://175.45.192.191/rscart/orderproductList")
+      .get("https://175.45.192.191/api/rscart/orderproductList")
       .then((response) => {
         setOrderLists(response.data);
       })
@@ -68,7 +68,7 @@ export default function OrderList() {
   }, []);
 
   function deleteOrder(order_key) {
-    let url = "https://175.45.192.191/rscart/deleteOrder/" + order_key;
+    let url = "https://175.45.192.191/api/rscart/deleteOrder/" + order_key;
 
     axios
       .delete(url)
@@ -83,7 +83,7 @@ export default function OrderList() {
   }
 
   function reviewDetail(order_key, product_id) {
-    let url = `https://175.45.192.191/review/detail/${order_key}/${product_id}`;
+    let url = `https://175.45.192.191/api/review/detail/${order_key}/${product_id}`;
 
     axios
       .get(url)

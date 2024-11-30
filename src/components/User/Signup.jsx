@@ -104,7 +104,7 @@ function Signup() {
             setIdMessage("4-12사이 대소문자 또는 숫자만 입력해 주세요");
             setIsId(false);
         } else {
-            axios.get(`https://175.45.192.191/rsuser/idcheck?user_id=${currentId}`)
+            axios.get(`https://175.45.192.191/api/rsuser/idcheck?user_id=${currentId}`)
                 .then(response => {
                     const isDuplicate = response.data === 'F';
                     setIdMessage(isDuplicate ? '이미 사용 중인 아이디입니다' : '사용 가능한 아이디입니다.');

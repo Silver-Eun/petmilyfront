@@ -11,11 +11,11 @@ function PromotionProducts({ calcProductPrice, sortProducts, addCart }) {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const infoResponse = await axios.get('https://175.45.192.191/rsproduct/promotionInfoList');
+                const infoResponse = await axios.get('https://175.45.192.191/api/rsproduct/promotionInfoList');
                 setPromotionInfoData(infoResponse.data);
                 console.log(`** promotionInfoList 서버연결 성공 =>`, infoResponse.data);
 
-                const productResponse = await axios.get(`https://175.45.192.191/rsproduct/promotionProductList/${id}`);
+                const productResponse = await axios.get(`https://175.45.192.191/api/rsproduct/promotionProductList/${id}`);
                 setPromotionProductData(productResponse.data);
                 console.log(`** promotionProductList 서버연결 성공 =>`, productResponse.data);
             } catch (err) {

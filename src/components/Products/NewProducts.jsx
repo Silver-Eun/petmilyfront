@@ -7,7 +7,7 @@ function NewProducts({ calcProductPrice, sortProducts, addCart }) {
     const [newProductData, setNewProductData] = useState([]);
 
     useEffect(() => {
-        axios.get('https://175.45.192.191/rsproduct/newProductList')
+        axios.get('https://175.45.192.191/api/rsproduct/newProductList')
             .then((response) => {
                 setNewProductData(response.data);
                 console.log(`** newProductList 서버연결 성공 =>`, response.data);

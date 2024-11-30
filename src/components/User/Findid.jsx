@@ -14,7 +14,7 @@ function Findid() {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        const url = "https://175.45.192.191/rsuser/Findid";
+        const url = "https://175.45.192.191/api/rsuser/Findid";
         const data = {
             user_name: userName,
             user_email: userEmail

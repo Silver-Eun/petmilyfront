@@ -13,7 +13,7 @@ const CartItem = ({
 
   // 장바구니 상품 삭제
   function cDelete(user_id, product_id) {
-    let url = "https://175.45.192.191/rscart/cdelete/" + user_id + "/" + product_id;
+    let url = "https://175.45.192.191/api/rscart/cdelete/" + user_id + "/" + product_id;
 
     axios
       .delete(url)

@@ -65,7 +65,7 @@ export default function ReviewUpdate() {
         formData.append('review_point', pointToAdd);
 
         await axios.post(
-            `https://175.45.192.191/review/updateBoard/`,
+            `https://175.45.192.191/api/review/updateBoard/`,
             formData,
             {
                 headers: {
@@ -84,7 +84,7 @@ export default function ReviewUpdate() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`https://175.45.192.191/reviewDetail/${id}`);
+                const response = await axios.get(`https://175.45.192.191/api/reviewDetail/${id}`);
                 setReview(response.data);
                 
             } catch (error) {
@@ -99,7 +99,7 @@ export default function ReviewUpdate() {
         const searchInput = document.getElementById('searchInput').value;
 
         try {
-            const response = await axios.get(`https://175.45.192.191/product/search?name=${searchInput}`);
+            const response = await axios.get(`https://175.45.192.191/api/product/search?name=${searchInput}`);
             setSearchResult(response.data);
         } catch (error) {
             console.error('찾으시는 상품이 없습니다.', error);

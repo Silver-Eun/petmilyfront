@@ -106,7 +106,7 @@ export default function Order({ orderItems, deleteOrder, calcProductPrice }) {
     };
 
     axios
-      .post("https://175.45.192.191/rscart/order", OrderProductDTO)
+      .post("https://175.45.192.191/api/rscart/order", OrderProductDTO)
       .then((response) => {
         alert("주문완료이 완료되었습니다.");
         navigate("/user/orderList");

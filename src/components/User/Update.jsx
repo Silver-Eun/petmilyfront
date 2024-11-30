@@ -8,13 +8,6 @@ import { useEffect } from 'react';
 
 
 function Update() {
-
-
-    // const onKeyDown = (e) => {
-    //     if (e.keyCode === 13) {
-    //         onSubmit();
-    //     }
-    // };
     // 회원이름
     const [userName, setUserName] = useState("");
     // 회원아이디
@@ -133,86 +126,6 @@ function Update() {
         }
         setUserName(curruntName);
     };
-
-    //아이디 유효성 검사
-    // const [id, setId] = useState(""); //초기값세팅
-    // const [idMessage, setIdMessage] = useState("");//오류메세지상태저장
-    // const [isId, setIsId] = useState(false);//유효성검사
-
-    // const onChangeId = (e) => {
-    //     const currentId = e.target.value;
-    //     setId(currentId);
-    //     const idRegExp = /^[a-zA-z0-9]{4,12}$/;
-
-    //     if (!idRegExp.test(currentId)) {
-    //         setIdMessage("4-12사이 대소문자 또는 숫자만 입력해 주세요");
-    //         setIsId(false);
-    //     } else {
-    //         setIdMessage("사용가능한 아이디 입니다.");
-    //         setIsId(true);
-    //     }
-    // };
-
-    // const onChangeId = (e) => {
-    //     const currentId = e.target.value;
-    //     setId(currentId);
-    //     const idRegExp = /^[a-zA-z0-9]{4,12}$/;
-
-    //     if (!idRegExp.test(currentId)) {
-    //         setIdMessage("4-12사이 대소문자 또는 숫자만 입력해 주세요");
-    //         setIsId(false);
-    //     } else {
-    //         axios.get(`/rsuser/idcheck?user_id=${currentId}`)
-    //             .then(response => {
-    //                 const isDuplicate = response.data === 'F';
-    //                 setIdMessage(isDuplicate ? '이미 사용 중인 아이디입니다' : '사용 가능한 아이디입니다.');
-    //                 setIsId(!isDuplicate);
-    //             })
-    //             .catch(error => {
-    //                 console.error('아이디 중복 확인 실패:', error);
-    //                 setIdMessage('아이디 중복 확인에 실패했습니다.');
-    //                 setIsId(false);
-    //             });
-    //     }
-    // };
-
-
-    //패스워드 유효성 검사
-    // const [pw, setPw] = useState("");
-    // const [pwMessage, setpwMessage] = useState("");
-    // const [ispw, setIspw] = useState(false);
-
-    // const onChangePw = (e) => {
-    //     const currentPw = e.target.value;
-
-    //     const pwRegExp = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/;
-
-    //     if (!pwRegExp.test(currentPw)) {
-    //         setpwMessage("숫자+영문자+특수문자 조합으로 8자리 이상 입력해주세요");
-    //         setIspw(false);
-    //     } else {
-    //         setpwMessage("사용가능한 비밀번호 입니다");
-    //         setIspw(true);
-    //     }
-    //     setUserPassword(currentPw);
-    // };
-
-    // //패스워드 확인
-    // const [pw2, setPw2] = useState("");
-    // const [pwMessage2, setpwMessage2] = useState("");
-    // const [ispw2, setIspw2] = useState(false);
-
-    // const onChangePw2 = (e) => {
-    //     const currentPw2 = e.target.value;
-    //     setPw2(currentPw2);
-    //     if (pw !== currentPw2) {
-    //         setpwMessage2("비밀번호가 일치하지 않습니다");
-    //         setIspw2(false);
-    //     } else {
-    //         setpwMessage2("비밀번호가 일치합니다");
-    //         setIspw2(true);
-    //     }
-    // };
 
     //이메일 유효성 검사
     const [email, setEmail] = useState("");
@@ -360,7 +273,7 @@ function Update() {
             const newpassword = {
                 user_password: newPassword,
             };
-            axios.post(`https://175.45.192.191/rsuser/pwupdate/${userId}`, newpassword)
+            axios.post(`https://175.45.192.191/api/rsuser/pwupdate/${userId}`, newpassword)
                 .then(response => {
                     alert("비밀번호가 변경되었습니다");
                     // 비밀번호 변경 성공 시 필요한 처리를 추가할 수 있습니다.
@@ -385,7 +298,7 @@ function Update() {
             addr_detail: AddrD,
         };
 
-        axios.post(`https://175.45.192.191/rsuser/update/${userId}`, userData)
+        axios.post(`https://175.45.192.191/api/rsuser/update/${userId}`, userData)
             .then(response => {
                 const updatedUserData = {
                     ...JSON.parse(sessionStorage.getItem("loggedInUser")),

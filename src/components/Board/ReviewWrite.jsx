@@ -50,7 +50,7 @@ export default function ReviewWrite() {
         let formData = new FormData(document.getElementById('reviewForm'));
 
         await axios.post(
-            "https://175.45.192.191/review/insert",
+            "https://175.45.192.191/api/review/insert",
             formData,
             {
                 headers: {
@@ -72,7 +72,7 @@ export default function ReviewWrite() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`https://175.45.192.191/product/searchByUser?user=${user.user_id}`);
+                const response = await axios.get(`https://175.45.192.191/api/product/searchByUser?user=${user.user_id}`);
                 setSearchResult(response.data);
             } catch (error) {
                 console.error('데이터를 불러오는 중에 오류가 발생했습니다.', error);
@@ -86,7 +86,7 @@ export default function ReviewWrite() {
         const searchInput = document.getElementById('searchInput').value;
 
         try {
-            const response = await axios.get(`https://175.45.192.191/product/search?name=${searchInput}`);
+            const response = await axios.get(`https://175.45.192.191/api/product/search?name=${searchInput}`);
             setSearchResult(response.data);
         } catch (error) {
             console.error('찾으시는 상품이 없습니다.', error);

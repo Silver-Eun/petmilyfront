@@ -15,7 +15,7 @@ export default function NoticeDetail() {
 
     useEffect(() => {
         axios
-            .get('https://175.45.192.191/noticeDetail/'+id)
+            .get('https://175.45.192.191/api/noticeDetail/'+id)
             .then((response) => {
                 setNotice(response.data);
             })

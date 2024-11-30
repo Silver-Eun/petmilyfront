@@ -10,13 +10,13 @@ export default function Cart({ cartItems, setCartItems, nothing, setNothing, onD
 
     if (loggedInUser) {
       axios
-      .get("https://175.45.192.191/rscart/cartList")
-      .then((response) => {
-        setCartItems(response.data);
-      })
-      .catch((err) => {
-        alert("장바구니 불러오기 실패 => " + err.message);
-      });
+        .get("https://175.45.192.191/api/rscart/cartList")
+        .then((response) => {
+          setCartItems(response.data);
+        })
+        .catch((err) => {
+          alert("장바구니 불러오기 실패 => " + err.message);
+        });
     } else {
       alert("로그인 해주세요");
     }

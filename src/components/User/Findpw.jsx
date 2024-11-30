@@ -15,7 +15,7 @@ function Findpw() {
     const onSubmit = (e) => {
         e.preventDefault();
 
-        const url = `https://175.45.192.191/rsuser/Findpw/${userId}`;
+        const url = `https://175.45.192.191/api/rsuser/Findpw/${userId}`;
         const data = {
             user_id: userId,
             user_email: userEmail

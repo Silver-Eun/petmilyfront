@@ -11,7 +11,7 @@ function Login() {
     const onSubmit = (e) => {
         e.preventDefault();
 
-        let url = "https://175.45.192.191/rsuser/Login";
+        let url = "https://175.45.192.191/api/rsuser/Login";
 
         const data = {
             user_id: userId,

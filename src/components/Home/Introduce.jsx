@@ -21,7 +21,7 @@ function Introduce({ props, calcProductPrice, addCart }) {
             url = 'discountedProductList';
         }
 
-        axios.get(`https://175.45.192.191/rsproduct/${url}`)
+        axios.get(`https://175.45.192.191/api/rsproduct/${url}`)
             .then((response) => {
                 setProductData(response.data);
                 //console.log(`** productData 서버연결 성공 =>`, response.data);
