@@ -15,7 +15,7 @@ function Findpw() {
     const onSubmit = (e) => {
         e.preventDefault();
 
-        const url = `https://175.45.192.191/api/rsuser/Findpw/${userId}`;
+        const url = `https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/rsuser/Findpw/${userId}`;
         const data = {
             user_id: userId,
             user_email: userEmail
