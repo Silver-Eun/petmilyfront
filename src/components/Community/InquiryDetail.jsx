@@ -41,7 +41,7 @@ export default function InquiryDetail() {
 
     useEffect(() => {
         axios
-            .get('https://175.45.192.191/api/inquiryDetail/' + id)
+            .get('https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/inquiryDetail/' + id)
             .then((response) => {
                 setInquiry(response.data);
             })

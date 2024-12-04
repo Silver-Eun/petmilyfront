@@ -82,7 +82,7 @@ function ReviewDetail() {
 
     function getReplies() {
         setIsLoading(true);
-        let url = "https://175.45.192.191/api/review/reply/" + id;
+        let url = "https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/review/reply/" + id;
         axios.get(url)
             .then(response => {
                 setReplies(response.data);
@@ -97,7 +97,7 @@ function ReviewDetail() {
     }
 
     function reviewDelete() {
-        let url = `https://175.45.192.191/api/review/delete/${id}/${review.order_key}/${review.product_id}`;
+        let url = `https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/review/delete/${id}/${review.order_key}/${review.product_id}`;
         axios.delete(
             url
         ).then(response => {
@@ -111,7 +111,7 @@ function ReviewDetail() {
     }
 
     const replyDelete = async (reply_id) => {
-        let url = "https://175.45.192.191/api/review/reply/delete/" + reply_id;
+        let url = "https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/review/reply/delete/" + reply_id;
         axios.delete(
             url
         ).then(response => {
@@ -126,7 +126,7 @@ function ReviewDetail() {
 
     useEffect(() => {
         axios
-            .get('https://175.45.192.191/api/reviewDetail/' + id)
+            .get('https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/reviewDetail/' + id)
             .then((response) => {
                 setReview(response.data);
             })

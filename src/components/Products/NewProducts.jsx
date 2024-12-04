@@ -7,7 +7,7 @@ function NewProducts({ calcProductPrice, sortProducts, addCart }) {
     const [newProductData, setNewProductData] = useState([]);
 
     useEffect(() => {
-        axios.get('https://175.45.192.191/api/rsproduct/newProductList')
+        axios.get('https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/rsproduct/newProductList')
             .then((response) => {
                 setNewProductData(response.data);
                 console.log(`** newProductList 서버연결 성공 =>`, response.data);

@@ -13,7 +13,7 @@ const CartItem = ({
 
   // 장바구니 상품 삭제
   function cDelete(user_id, product_id) {
-    let url = "https://175.45.192.191/api/rscart/cdelete/" + user_id + "/" + product_id;
+    let url = "https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/rscart/cdelete/" + user_id + "/" + product_id;
 
     axios
       .delete(url)
@@ -28,7 +28,7 @@ const CartItem = ({
 
   // cartCntUp(장바구니 수량 +1)
   function upCnt(product_id, item) {
-    let url = "https://175.45.192.191/rscart/cartCntUp/" + product_id;
+    let url = "https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/rscart/cartCntUp/" + product_id;
 
     if (item.product_cnt < 100) {
       axios
@@ -47,7 +47,7 @@ const CartItem = ({
 
   // cartCntDown(장바구니 수량 -1)
   function downCnt(product_id, item) {
-    let url = "https://175.45.192.191/rscart/cartCntDown/" + product_id;
+    let url = "https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/rscart/cartCntDown/" + product_id;
 
     if (item.product_cnt > 1) {
       axios

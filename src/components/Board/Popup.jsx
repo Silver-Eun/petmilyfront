@@ -9,7 +9,7 @@ function Popup({ showPopup, closePopup, data }) {
   const userName = user ? user.user_name : ''; // 유저 이름 변수
 
   const replySubmit = async () => {
-    let url = "https://175.45.192.191/api/review/reply/insert";
+    let url = "https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/review/reply/insert";
 
     await axios({
       url: url,

@@ -26,7 +26,7 @@ function AllProducts({ calcProductPrice, sortProducts, addCart, setCartItems }) 
     const [productData, setProductData] = useState([]);
 
     const fetchData = () => {
-        axios.get(`https://175.45.192.191/api/rsproduct/productList/${kind}/${category}`)
+        axios.get(`https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/rsproduct/productList/${kind}/${category}`)
             .then((response) => {
                 setProductData(response.data);
                 console.log(`** productList 서버연결 성공 =>`, response.data);

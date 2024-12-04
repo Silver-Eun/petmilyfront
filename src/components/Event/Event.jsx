@@ -9,7 +9,7 @@ function Event() {
     const [eventData, setEventData] = useState(null);
 
     useEffect(() => {
-        axios.get('https://175.45.192.191/api/rsproduct/eventList')
+        axios.get('https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/rsproduct/eventList')
             .then((response) => {
                 setEventData(response.data);
                 console.log(`** eventList 서버연결 성공 =>`, response.data);

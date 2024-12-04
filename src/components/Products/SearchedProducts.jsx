@@ -10,7 +10,7 @@ function SearchedProducts({ calcProductPrice, sortProducts, addCart }) {
     const search = searchParams.get('search');
 
     useEffect(() => {
-        axios.get(`https://175.45.192.191/api/rsproduct/searchedProductList/${search}`)
+        axios.get(`https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/rsproduct/searchedProductList/${search}`)
             .then((response) => {
                 setSearchedData(response.data);
                 console.log(`** searchedProductList  서버연결 성공 =>`, response.data);

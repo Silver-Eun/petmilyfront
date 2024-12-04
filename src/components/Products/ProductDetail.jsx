@@ -68,7 +68,7 @@ const ProductDetail = ({ calcProductPrice, addCart, addOrder, setCartItems, noth
 
     // 장바구니 추가
     function cartInsert(a, b) {
-        let url = "https://175.45.192.191/api/rscart/cartInsert/" + a + "/" + b;
+        let url = "https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/rscart/cartInsert/" + a + "/" + b;
 
          const loggedInUser = sessionStorage.getItem("loggedInUser");
 
@@ -135,7 +135,7 @@ const ProductDetail = ({ calcProductPrice, addCart, addOrder, setCartItems, noth
     useEffect(() => {
         const fetchProductData = async () => {
             try {
-                const response = await axios.get(`https://175.45.192.191/api/rsproduct/productDetail/${id}`);
+                const response = await axios.get(`https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/rsproduct/productDetail/${id}`);
                 setProductDetailData(response.data);
                 console.log("** productDetail 서버연결 성공 =>", response.data);
             } catch (error) {
@@ -145,7 +145,7 @@ const ProductDetail = ({ calcProductPrice, addCart, addOrder, setCartItems, noth
 
         const fetchProductImageData = async () => {
             try {
-                const response = await axios.get(`https://175.45.192.191/api/rsproduct/productImage/${id}`);
+                const response = await axios.get(`https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/rsproduct/productImage/${id}`);
                 setProductImagesData(response.data);
                 console.log("** productImagesData 서버연결 성공 =>", response.data);
             } catch (error) {
@@ -155,7 +155,7 @@ const ProductDetail = ({ calcProductPrice, addCart, addOrder, setCartItems, noth
 
         const fetchInquiryData = async () => {
             try {
-                const response = await axios.get(`https://175.45.192.191/api/rsproduct/inquiry/list/${id}`);
+                const response = await axios.get(`https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/rsproduct/inquiry/list/${id}`);
                 setInquiry(response.data);
             } catch (error) {
                 alert(`자료가 없습니다.`);
@@ -164,7 +164,7 @@ const ProductDetail = ({ calcProductPrice, addCart, addOrder, setCartItems, noth
 
         const fetchReviewData = async () => {
             try {
-                const response = await axios.get(`https://175.45.192.191/api/rsproduct/review/list/${id}`);
+                const response = await axios.get(`https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/rsproduct/review/list/${id}`);
                 setReview(response.data);
             } catch (error) {
                 alert(`자료가 없습니다.`);

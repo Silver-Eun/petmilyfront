@@ -8,7 +8,7 @@ const ImageSlider = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     useEffect(() => {
-        axios.get('https://175.45.192.191/api/rsproduct/promotionInfoList')
+        axios.get('https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/rsproduct/promotionInfoList')
             .then((response) => {
                 setPromotionInfoData(response.data);
                 console.log(`** promotionProductList 서버연결 성공 =>`, response.data);

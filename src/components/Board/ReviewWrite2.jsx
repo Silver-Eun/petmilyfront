@@ -42,7 +42,7 @@ export default function ReviewWrite() {
         let formData = new FormData(document.getElementById('reviewForm'));
 
         await axios.post(
-            "https://175.45.192.191/api/review/insert",
+            "https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/review/insert",
             formData,
             {
                 headers: {
@@ -62,7 +62,7 @@ export default function ReviewWrite() {
     }
 
     const getProductData = () => {
-        axios.get(`https://175.45.192.191/api/rsproduct/productDetail/${id}`)
+        axios.get(`https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/rsproduct/productDetail/${id}`)
             .then((response) => {
                 setProductData(response.data);
                 console.log(`** productDetail 서버연결 성공 =>`, response.data);

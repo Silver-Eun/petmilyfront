@@ -58,7 +58,7 @@ export default function OrderList() {
 
   useEffect(() => {
     axios
-      .get("https://175.45.192.191/api/rscart/orderproductList")
+      .get("https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/rscart/orderproductList")
       .then((response) => {
         setOrderLists(response.data);
       })
@@ -68,7 +68,7 @@ export default function OrderList() {
   }, []);
 
   function deleteOrder(order_key) {
-    let url = "https://175.45.192.191/api/rscart/deleteOrder/" + order_key;
+    let url = "https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/rscart/deleteOrder/" + order_key;
 
     axios
       .delete(url)
@@ -83,7 +83,7 @@ export default function OrderList() {
   }
 
   function reviewDetail(order_key, product_id) {
-    let url = `https://175.45.192.191/api/review/detail/${order_key}/${product_id}`;
+    let url = `https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/review/detail/${order_key}/${product_id}`;
 
     axios
       .get(url)

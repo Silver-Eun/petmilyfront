@@ -47,7 +47,7 @@ const ManageReview = () => {
   const itemsPerPage = 3;
 
   function reviewDelete(id) {
-    let url = "https://175.45.192.191/api/review/delete/" + id;
+    let url = "https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/review/delete/" + id;
     axios
       .delete(url)
       .then((response) => {
@@ -65,7 +65,7 @@ const ManageReview = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://175.45.192.191/api/review/list", {
+        const response = await axios.get("https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/review/list", {
           params: {
             searchPeriod,
             searchCriteria,

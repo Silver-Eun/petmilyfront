@@ -15,7 +15,7 @@ export default function DetailDetail() {
 
     useEffect(() => {
         axios
-            .get('https://175.45.192.191/api/faqDetail/' + id)
+            .get('https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/faqDetail/' + id)
             .then((response) => {
                 setFaq(response.data);
             })

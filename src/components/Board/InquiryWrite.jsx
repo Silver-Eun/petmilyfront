@@ -30,7 +30,7 @@ export default function InquiryWrite() {
             alert("제목을 입력하세요.");
             return;
         }
-        let url = "https://175.45.192.191/api/inquiry/insert";
+        let url = "https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/inquiry/insert";
 
         await axios({
             url: url,
@@ -56,7 +56,7 @@ export default function InquiryWrite() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`https://175.45.192.191/api/product/search?name=`);
+                const response = await axios.get(`https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/product/search?name=`);
                 setSearchResult(response.data);
             } catch (error) {
                 console.error('데이터를 불러오는 중에 오류가 발생했습니다.', error);
@@ -70,7 +70,7 @@ export default function InquiryWrite() {
         const searchInput = document.getElementById('searchInput').value;
 
         try {
-            const response = await axios.get(`https://175.45.192.191/api/product/search?name=${searchInput}`);
+            const response = await axios.get(`https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/product/search?name=${searchInput}`);
             setSearchResult(response.data);
         } catch (error) {
             console.error('찾으시는 상품이 없습니다.', error);
@@ -87,7 +87,7 @@ export default function InquiryWrite() {
         setKind(selectedKind);
 
         try {
-            const response = await axios.get(`https://175.45.192.191/api/product/kind/${selectedKind}`);
+            const response = await axios.get(`https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/product/kind/${selectedKind}`);
             const { product, kinds } = response.data;
 
             const formattedData = Object.values(kinds).map(category => ({
@@ -105,7 +105,7 @@ export default function InquiryWrite() {
         const selectedCategory = event.target.value;
 
         try {
-            const response = await axios.get(`https://175.45.192.191/api/product/category/${kind}/${selectedCategory}`);
+            const response = await axios.get(`https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/product/category/${kind}/${selectedCategory}`);
             setSearchResult(response.data);
         } catch (error) {
             console.error('카테고리 데이터를 불러오는 중 에러:', error);

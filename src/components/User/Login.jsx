@@ -11,7 +11,7 @@ function Login() {
     const onSubmit = (e) => {
         e.preventDefault();
 
-        let url = "https://175.45.192.191/api/rsuser/Login";
+        let url = "https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/rsuser/Login";
 
         const data = {
             user_id: userId,

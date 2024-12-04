@@ -22,7 +22,7 @@ export default function InquiryWrite2() {
             return;
         }
 
-        let url = "https://175.45.192.191/api/inquiry/insert";
+        let url = "https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/inquiry/insert";
 
         await axios({
             url: url,
@@ -47,7 +47,7 @@ export default function InquiryWrite2() {
     }
 
     const getProductData = () => {
-        axios.get(`https://175.45.192.191/api/rsproduct/productDetail/${id}`)
+        axios.get(`https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/rsproduct/productDetail/${id}`)
             .then((response) => {
                 setProductData(response.data);
                 console.log(`** productDetail 서버연결 성공 =>`, response.data);

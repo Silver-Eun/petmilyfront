@@ -48,7 +48,7 @@ export default function ManageInquiry() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://175.45.192.191/api/rscart/inquiry/list", {
+        const response = await axios.get("https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/rscart/inquiry/list", {
           params: {
             searchPeriod,
             searchCriteria,
@@ -82,7 +82,7 @@ export default function ManageInquiry() {
   let contents = inquiry.inquiry_content;
 
   function inquiryDelete(id) {
-    let url = "https://175.45.192.191/api/inquiry/delete/" + id;
+    let url = "https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/inquiry/delete/" + id;
     axios
       .delete(url)
       .then((response) => {

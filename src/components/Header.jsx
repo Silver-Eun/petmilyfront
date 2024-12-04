@@ -62,7 +62,7 @@ function Header() {
                                 로그아웃
                             </Link>
                             {isAdmin ? (
-                                <Link to="https://175.45.192.191/api/home">관리자페이지</Link> // 'admin'일 때의 링크
+                                <Link to="https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/home">관리자페이지</Link> // 'admin'일 때의 링크
                             ) : (
                                 <Link to="/user/mypage">마이페이지</Link> // 일반 사용자의 링크
                             )}

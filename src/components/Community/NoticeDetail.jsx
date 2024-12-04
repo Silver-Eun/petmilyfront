@@ -15,7 +15,7 @@ export default function NoticeDetail() {
 
     useEffect(() => {
         axios
-            .get('https://175.45.192.191/api/noticeDetail/'+id)
+            .get('https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/noticeDetail/'+id)
             .then((response) => {
                 setNotice(response.data);
             })

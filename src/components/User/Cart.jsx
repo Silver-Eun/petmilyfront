@@ -10,7 +10,7 @@ export default function Cart({ cartItems, setCartItems, nothing, setNothing, onD
 
     if (loggedInUser) {
       axios
-        .get("https://175.45.192.191/api/rscart/cartList")
+        .get("https://port-0-petmilyreal-1272llwrbm1kq.sel5.cloudtype.app/api/rscart/cartList")
         .then((response) => {
           setCartItems(response.data);
         })
